@@ -60,7 +60,7 @@ There may be another opportunity here.
 The two most common operations typically associated with logs is grep and tail.
 
 ### Analysis
-Logs also need to be analyzed for certain kinds of events.  Some form of local processing (or map reduce )are common use cases.
+Logs also need to be analyzed for certain kinds of events.  Some form of local processing (or map reduce )are common use cases.  Map reduce is easier said than done, though.  What if the content is encrypted?  In such cases, some form of **homomorphic cryptography** must be made available.
 
 ### Streaming
 While local processing makes the most sense, local processing isn't always possible or desired.  In such cases, there should be a streaming download that allows data to be processed as it comes in.  This may be a duplicate of the tail requiremet.
