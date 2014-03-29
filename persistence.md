@@ -1,5 +1,5 @@
 # Hypernet Data
-Hypernet data serves a number of different purposes.  It's a
+Processes are inherently ephemeral by nature, whether running on a PC or on a server in a date center... which is why disk storage is called "persistent".  Recreating reliable persistence on a profoundly unreliable substrate is one of the problems Hypernet Data must solve.  It must do so in a way that makes the network as transparent to the user as possible.  So what is Hypernet Data? It's a:
 
 - p2p persistence layer
 - version control system
@@ -7,13 +7,13 @@ Hypernet data serves a number of different purposes.  It's a
 - pub/sub system
 - rights management system
 
-What does HND actually *need* to do and why does it need to do those things?  Let's look at some examples.
+But *why* does Hypernet Data actually need to do these things?  Let's look at some examples.
 
 ## Example: Google Docs
 ### Persistence
-> Users exect that data loss generally won't happen.  The one exception is when changes are made to a document during a network outage.  Users understand that those changes cannot be persisted without reconnecting.
+> Users expect that data loss generally won't happen.  The one exception is when changes are made to a document during a network outage.  Users understand that those changes cannot be persisted without reconnecting.
 
-Given the unreliable nature of the p2p compute fabric, a high level of replication is needed.  Any `fsync` equivelant or semantic should not return until a certian (perhaps user-specified?)level of replicaiton has been achieved.  To economize bandwidth and optimize throughput, multi peer transfers should be used.
+Given the unreliable nature of the p2p compute fabric, a high level of replication is needed.  Any `fsync` equivalent or semantic should not return until a certain (perhaps user-specified?)level of replication has been achieved.  To economize bandwidth and optimize throughput, multi peer transfers should be used.
 
 ### Permissions
 > Users share content with arbitrary groups of users.  Different users hold different rights.  Some may:
@@ -34,22 +34,22 @@ The challenge in a p2p environment is that there is no central authority that ca
 The answer is encryption.
 
 ### Revisions
-> The same "document" can be edited numerous times in rappid succession.
+> The same "document" can be edited numerous times in rapid succession.
 
  We'll need binary diffs.  Larger documents cannot practically be uploaded, downloaded, or stored multiple times.  Storing previous revisions makes it possible to establish some degree of determinism in an otherwise highly non-deterministic system.
 
-### Notifcations
-> Users must have a way of recieving push notifcations for the latest revision.
+### Notifications
+> Users must have a way of receiving push notifications for the latest revision.
 
-Imagine the document is a google document... or the front page of reddit.  Applications must be informed when there is a new version.  Polling is not an accceptable solution.  We'll need a pub/sub system.  If the system leverages multi peer transfers it will (auto) scale gracefully.
+Imagine the document is a google document... or the front page of reddit.  Applications must be informed when there is a new version.  Polling is not an acceptable solution.  We'll need a pub/sub system.  If the system leverages multi peer transfers it will (auto) scale gracefully.
 
 ### Conflicts
 > Conflicts can occur whenever there is a bifurcation in the causal chain.  Slow networks, network partitions and other faults can result in multiple, conflicting edits.
 
-While it is impossible to automatically resolve conflicts in a generalizable way, conflicts must be detected and the applicaiton or user should be able to decide how to resolve them without suffering arbitrary data loss.  Some policies can be fully automated, though.  In cases like Dropbox all revisions are saved but the last write becomes the head.
+While it is impossible to automatically resolve conflicts in a generalizable way, conflicts must be detected and the application or user should be able to decide how to resolve them without suffering arbitrary data loss.  Some policies can be fully automated, though.  In cases like Dropbox all revisions are saved but the last write becomes the head.
 
-### Searchable metadata
-> Users must be able to search for their documents.  The search criteria is app secpfic but can include mod dates, owners, and even full text search.  For example, when a user logs in they need to have some way of seeing their files.
+### Search-able metadata
+> Users must be able to search for their documents.  The search criteria is app specific but can include mod dates, owners, and even full text search.  For example, when a user logs in they need to have some way of seeing their files.
 
 Listing all documents belonging to a "domain" seems easy enough.  But what's a domain?  Filesystems use hierarchical namespaces (i.e. `/users/Peter/Desktop/theplan.md`) but what should the path components be in this case?
 
@@ -57,13 +57,19 @@ There may be another opportunity here.
 
 ## Example: Log aggregator
 ### Grep, Tail
-The two most common operations typically associated with logs is grep and tail.
+> The two most common operations typically associated with logs is grep and tail.
+
+Tailing a large number of logs simultaneously in real time isn't possible because of bandwidth constraints but what about tailing a grep?  If the data is encrypted something like grep can't work.  In such cases, some form of **homomorphic cryptography** must be made available.
 
 ### Analysis
-Logs also need to be analyzed for certain kinds of events.  Some form of local processing (or map reduce )are common use cases.  Map reduce is easier said than done, though.  What if the content is encrypted?  In such cases, some form of **homomorphic cryptography** must be made available.
+Logs also need to be analyzed for certain kinds of events.  Some form of local processing (or map reduce )are common use cases.
+
+> The only complication here is that it is better to perform the mapping where the data is stored.
 
 ### Streaming
-While local processing makes the most sense, local processing isn't always possible or desired.  In such cases, there should be a streaming download that allows data to be processed as it comes in.  This may be a duplicate of the tail requiremet.
+> While local processing makes the most sense, local processing isn't always possible or desired.
+
+In such cases, there should be a streaming download that allows data to be processed as it comes in.  This may be a duplicate of the tail requirement.
 
 ## Example: Netflix
 ### Load balancing
@@ -73,4 +79,4 @@ The solution here seems to come from multi peered downloads (a la bittorrent) wh
 
 # What could actually be built with such a solution?
 
-Well, it seems like pretty much everything.  Could you write a secure chat app?  Sure.  Just make the "document" available to the participants and grant all participants write access and watch them "edit" the document.  Could you write video sharing webite?  Sure, why not.  The videos are distributed using multi-peer downloads so they autoscale.  Public videos are stored without a permission block (which means they aren't encrypted) and the "front page" is just another document owned by the app but granting everyone read privelleges (again, the document would not be encrypted).
+Well, it seems like pretty much everything.  Could you write a secure chat app?  Sure.  Just make the "document" available to the participants and grant all participants write access and watch them "edit" the document.  Could you write video sharing web site?  Sure, why not.  The videos are distributed using multi-peer downloads so they autoscale.  Public videos are stored without a permission block (which means they aren't encrypted) and the "front page" is just another document owned by the app but granting everyone read privileges (again, the document would not be encrypted).  Surely something like Reddit couldn't be built, there are too many people editing at the same time, right?  Wrong.  Reddit has that problem today and it works just fine (most of the time).  One reason threads on Reddit are hierarchical (whether the creators know it or not) is to allow for causal bifurcations in the thread.
