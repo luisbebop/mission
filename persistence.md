@@ -1,5 +1,5 @@
 # Hypernet Data
-Processes are inherently ephemeral by nature, whether running on a PC or on a server in a date center... which is why disk storage is called "persistent".  Recreating reliable persistence on a profoundly unreliable substrate is one of the problems Hypernet Data must solve.  It must do so in a way that makes the network as transparent to the user as possible.  So what is Hypernet Data? It's a:
+Processes are inherently ephemeral by nature, whether running on a PC or on a server in a data center... which is why disk storage is called "persistent".  Recreating reliable persistence on a profoundly unreliable substrate is one of the problems Hypernet Data must solve.  It must do so in a way that makes the network as transparent to the user as possible.  So what is Hypernet Data? It's a:
 
 - p2p persistence layer
 - version control system
@@ -13,7 +13,7 @@ But *why* does Hypernet Data actually need to do these things?  Let's look at so
 ### Persistence
 > Users expect that data loss generally won't happen.  The one exception is when changes are made to a document during a network outage.  Users understand that those changes cannot be persisted without reconnecting.
 
-Given the unreliable nature of the p2p compute fabric, a high level of replication is needed.  Any `fsync` equivalent or semantic should not return until a certain (perhaps user-specified?)level of replication has been achieved.  To economize bandwidth and optimize throughput, multi peer transfers should be used.
+Given the unreliable nature of the p2p compute fabric, a high level of replication is needed.  Any `fsync` equivalent or semantic should not return until a certain (perhaps user-specified?) level of replication has been achieved.  To economize bandwidth and optimize throughput, multi peer transfers should be used.
 
 ### Permissions
 > Users share content with arbitrary groups of users.  Different users hold different rights.  Some may:
@@ -36,7 +36,7 @@ The answer is encryption.
 ### Revisions
 > The same "document" can be edited numerous times in rapid succession.
 
- We'll need binary diffs.  Larger documents cannot practically be uploaded, downloaded, or stored multiple times.  Storing previous revisions makes it possible to establish some degree of determinism in an otherwise highly non-deterministic system.
+ We'll need binary diffs.  Larger documents cannot practically be uploaded, downloaded, or stored multiple times.  Also, storing previous revisions makes it possible to establish some degree of determinism in an otherwise highly non-deterministic system.
 
 ### Notifications
 > Users must have a way of receiving push notifications for the latest revision.
@@ -53,7 +53,7 @@ While it is impossible to automatically resolve conflicts in a generalizable way
 
 Listing all documents belonging to a "domain" seems easy enough.  But what's a domain?  Filesystems use hierarchical namespaces (i.e. `/users/Peter/Desktop/theplan.md`) but what should the path components be in this case?
 
-There may be another opportunity here.
+There may be another opportunity here.  Currently, apps tend to use custom and opaque methods for storing their data.  If you don't like iTunes it's not trivial to switch to another player and keep all playlists, play counts and everything else.  (iTunes makes it easier by exporting some of its data in an xml file but that's a partial solution and does not let other apps modify what you see in iTunes).  Don't like Facebook?  Too bad.  There is absolutely no way you can realistically migrate your social network to another app.  In some cases you can import contacts but unless all your friends join you in the new social network... you're stuck.  This is not ideal.  The ultimate problem here is that **data, logic and UI** are often conflated, and rolled into one giant opaque code base.
 
 ## Example: Log aggregator
 ### Grep, Tail
