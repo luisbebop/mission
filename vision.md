@@ -2,19 +2,20 @@
 Hypernet is:
 
 - a p2p network
-- - an anonymity layer
-- - a public key crypto layer
-- - a messaging layer
+	- an anonymity layer
+	- a public key crypto layer
+	- a messaging layer
 - a p2p filesystem
-- - a pub/sub system
-- - a version control system
-- - a homomorphic crypto layer
-- - an indexable database
-- - a type system allowing applications to share data
+	- a pub/sub system
+	- a version control system
+	- a homomorphic crypto layer
+	- an indexable database
+	- a type system allowing applications to share data
 - a p2p computing environment
-- - a sand box
-- - a system idle monitor
-- - a compute fabric that forges emergent reliability from an inherently unreliable substrate
+	- a sand box
+	- a system idle monitor
+	- a method for remote code execution
+	- a compute fabric that forges emergent reliability from an inherently unreliable substrate
 
 # What is the point?
 Hypernet is a replacement for the internet.  The internet today looks a lot like a set of dumb terminals (browsers) connected to mainframes (data centers).  While a centralized hub-and-spoke architecture might seem like nothing more than an uninteresting implementation detail, it's actually a detail that carries serious side effects.  Those side effects can be mitigated using a distributed architecture instead, which is exactly what Hypernet offers.
@@ -56,10 +57,10 @@ Bittorrent scales... imgur doesn't.  But it's not just bandwidth.  Storage, and 
 
 ## Engineering
 ###### CENTRALIZED
-Building apps, even for data centers is hard.  Many engineers still like to ignore the ~~eight~~ nine fallacies of distributed computing but most internet apps are already very distributed but they're still written as if for a von Neumann machine.
+Building apps, even for data centers is hard.  Many engineers still tend to ignore the ~~eight~~ nine fallacies of distributed computing despite most internet apps being run on a network of machines.
 
 ###### DISTRIBUTED
-Hypernet let's us get a fresh start and code for a *network* instead of a *computer*.
+Hypernet let's us get a fresh start and code for a *network* instead of a *computer*.  In other words, stop coding for von Neumann machines and start coding for the internet.
 
 # Are you a business?
 Yes and we're currently selling ephemeral nodes at $1/node/month.  They're a lot like Amazon spot instance but they only let you run JARs.  They probably aren't very useful to most people but it's a starting point for us and if you need cheap spot instances that run JARs, we can hook you up.  Our business model is pretty simple.  In Hypernet there are **givers** and there are **takers**.  Givers are application developers or content publishers that drive adoption of Hypernet.  Takers are people who need computational resources but do not deliver value to end users of Hypernet.  We take the money we make from **takers** and we do a revshare with **givers**.  So, app developers and content publishers looking to make money, [drop us a line](mailto:info@hypernet.io).
