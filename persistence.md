@@ -53,7 +53,11 @@ While it is impossible to automatically resolve conflicts in a generalizable way
 
 Listing all documents belonging to a "domain" seems easy enough.  But what's a domain?  Filesystems use hierarchical namespaces (i.e. `/users/Peter/Desktop/theplan.md`) but what should the path components be in this case?
 
-There may be another opportunity here.  Currently, apps tend to use custom and opaque methods for storing their data.  If you don't like iTunes it's not trivial to switch to another player and keep all playlists, play counts and everything else.  (iTunes makes it easier by exporting some of its data in an xml file but that's a partial solution and does not let other apps modify what you see in iTunes).  Don't like Facebook?  Too bad.  There is absolutely no way you can realistically migrate your social network to another app.  In some cases you can import contacts but unless all your friends join you in the new social network... you're stuck.  This is not ideal.  The ultimate problem here is that **data, logic and UI** are often conflated, and rolled into one giant opaque code base.
+There may be another opportunity here.  Currently, apps tend to use custom and opaque methods for storing their data.  If you don't like iTunes it's not trivial to switch to another player and keep all playlists, play counts and everything else.  (iTunes makes it easier by exporting some of its data in an xml file but that's a partial solution and does not let other apps modify what you see in iTunes).  Don't like Facebook?  Too bad.  There is absolutely no way you can realistically migrate *your* social network to another app.  In some cases you can import contacts but unless all your friends join you in the new social network... you're stuck.  This is not ideal.  The ultimate problem here is that **data, logic and UI** are often conflated, and rolled into one giant opaque code base.
+
+How can multiple applications handle data from unknown sources?  MIME types seem to do some of that but they merely define types, not the kinds of schemas that most apps use.  If data schemas and their indices are exposed and standardized then you can just as easily use iBooks as you can Kindle... depending on which reader you prefer.  *Your* library would be accessible to both readers.
+
+Hypernet Data strongly encourages apps to make their data available to their users; without vending something like a DTD, apps would have no real way of quering for their own data.
 
 ## Example: Log aggregator
 ### Grep, Tail
