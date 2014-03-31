@@ -1,5 +1,5 @@
 # Hypernet Computing
-Traditionally, programs run on managed hardware, where the specs, the OS and other installed and running apps are (mostly) known at compile time.  Hypernet runs on arbitrary end user machines meaning that neither the hardware, nor the operating system, nor the installed packages, nor the average load of the machine are knowable in advance.  Additionally, because Hypernet apps run on end-user machines and not dedicated hardware, there is a potential for malicious apps.  Hypernet addresses these challenges.  So what is Hypernet Computing?  It's a:
+Processes are inherently ephemeral so computing in a p2p enviornment isn't so much the challenge as much as handling [persistence](https://github.com/hypernet/mission/blob/master/persistence.md).  Still, programs have traditionally been run on managed hardware, where the specs, the OS and other installed and running apps are (mostly) known at compile time.  Hypernet runs on arbitrary end user machines meaning that neither the hardware, nor the operating system, nor the installed packages, nor the average load of the machine are knowable in advance.  Additionally, because Hypernet apps run on end-user machines and not dedicated hardware, there is a potential for malicious apps.  Hypernet addresses these challenges.  So what is Hypernet Computing?  It's a:
 
 - sandbox
 - system monitor
