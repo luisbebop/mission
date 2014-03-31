@@ -1,7 +1,6 @@
 # Hypernet Data
 Processes are inherently ephemeral by nature, whether running on a PC, on a server in a data center or on a p2p node.  Persistent storage is what allows applications' state to outlive the process.  Recreating reliable persistence on a profoundly unreliable substrate is one of the problems Hypernet Data must solve.  It must do so in a way that makes the network as transparent to the user as possible.  So what is Hypernet Data? It's a:
 
-- p2p persistence layer
 - version control system
 - database
 - pub/sub system
