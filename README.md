@@ -1,5 +1,5 @@
 # What is Hypernet?
-Hypernet is:
+Hypernet is a compute fabric that forges emergent reliability from an inherently unreliable substrate.  It consists of:
 
 - a p2p network
 	- an anonymity layer
@@ -13,9 +13,8 @@ Hypernet is:
 	- a type system allowing applications to share data
 - a p2p computing environment
 	- a sand box
-	- a system idle monitor
+	- a system monitor
 	- a method for remote code execution
-	- a compute fabric that forges emergent reliability from an inherently unreliable substrate
 
 # What is the point?
 Hypernet is a replacement for the internet.  The internet today looks a lot like a set of dumb terminals (browsers) connected to mainframes (data centers).  While a centralized hub-and-spoke architecture might seem like nothing more than an uninteresting implementation detail, it's actually a detail that carries serious side effects.  Those side effects can be mitigated using a distributed architecture instead, which is exactly what Hypernet offers.
@@ -62,11 +61,11 @@ Building apps, even for data centers is hard.  Many engineers still tend to igno
 ###### DISTRIBUTED
 Hypernet let's us get a fresh start and code for a *network* instead of a *computer*.  In other words, stop coding for von Neumann machines and start coding for the internet.
 
-# Are you a business?
-Yes and we're currently selling ephemeral nodes at $1/node/month.  They're a lot like Amazon spot instance but they only let you run JARs.  They probably aren't very useful to most people but it's a starting point for us and if you need cheap spot instances that run JARs, we can hook you up.  Our business model is pretty simple.  In Hypernet there are **givers** and there are **takers**.  Givers are application developers or content publishers that drive adoption of Hypernet.  Takers are people who need computational resources but do not deliver value to end users of Hypernet.  We take the money we make from **takers** and we do a revshare with **givers**.  So, app developers and content publishers looking to make money, [drop us a line](mailto:info@hypernet.io).
+# Business Model
+We're currently selling ephemeral nodes at $1/node/month.  They're a lot like Amazon spot instance but they only let you run JARs.  They probably aren't very useful to most people but it's a starting point for us and if you need cheap spot instances that run JARs, we can hook you up.  Our business model is pretty simple.  In Hypernet there are **givers** and there are **takers**.  Givers are application developers or content publishers that drive adoption of Hypernet.  Takers are people who need computational resources but do not deliver value to end users of Hypernet.  We take the money we make from **takers** and we do a revshare with **givers**.  So, app developers and content publishers looking to make money, [drop us a line](mailto:info@hypernet.io).
 
-# Are you VC backed?
-No, but we're [raising money](https://angel.co/hypernet-1).
+# Funding
+We're currently [raising money](https://angel.co/hypernet-1).
 
 # What's the status of Hypernet?
 Parts of Hypernet are exactly as advertised but most parts are completely fake.  A lot of functionality isn't powered by our p2p network yet.  Instead we cheat and use a centralized server.  The thing is, we have absolutely no idea what we're doing and our guess is neither does anyone else.  (Incidentally, if you know how to fix the internet and existing models of software development [we want to hear from you](mailto:info@hypernet.io).  In the mean time, before we commit to implementing something crazy (like an entirely new functional programming language) we want to be sure that what we're building is actually useful.  The best way we know to do that is to mock it up using a disposable implementation and see what works and what doesn't.  So you'll just have to wait for the grand unveiling... or you could [jump in right away](http://github.com/hypernet).  We're open source and we welcome your contributions.
