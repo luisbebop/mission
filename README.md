@@ -1,5 +1,5 @@
 # What is Hypernet?
-Hypernet is a compute fabric that forges emergent reliability from an inherently unreliable substrate.  It consists of:
+Hypernet is a compute fabric that forges emergent reliability from an inherently unreliable p2p substrate.  It consists of:
 
 - a p2p network
 	- an anonymity layer
@@ -68,4 +68,4 @@ We're currently selling ephemeral nodes at $1/node/month.  They're a lot like Am
 We're currently [raising money](https://angel.co/hypernet-1).
 
 # What's the status of Hypernet?
-Parts of Hypernet are exactly as advertised but most parts are completely fake.  A lot of functionality isn't powered by our p2p network yet.  Instead we cheat and use a centralized server.  The thing is, we have absolutely no idea what we're doing and our guess is neither does anyone else.  (Incidentally, if you know how to fix the internet and existing models of software development [we want to hear from you](mailto:info@hypernet.io).  In the mean time, before we commit to implementing something crazy (like an entirely new functional programming language) we want to be sure that what we're building is actually useful.  The best way we know to do that is to mock it up using a disposable implementation and see what works and what doesn't.  So you'll just have to wait for the grand unveiling... or you could [jump in right away](http://github.com/hypernet).  We're open source and we welcome your contributions.
+Some parts of Hypernet are real some parts are fake.  In other words,s some of the functionality isn't powered by our p2p network yet.  Instead we cheat and use a centralized server.  This lets us expirement using cheap, disposable code without committing to something crazy (like writing an entirely new functional programming language).  In this way we *quickly* find out what works and what doesn't.  If you want to use hypernet  you'll just have to wait for the grand unveiling... or you could [jump in right away](http://github.com/hypernet).  We're open source and we welcome your contributions.
