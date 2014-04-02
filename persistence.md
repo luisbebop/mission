@@ -12,7 +12,7 @@ But *why* does Hypernet Data actually need to do these exact things?  Let's look
 ### Persistence
 > Users expect that data loss generally won't happen.  The one exception is when changes are made to a document during a network outage.  Users understand that those changes cannot be persisted without reconnecting.
 
-Given the unreliable nature of the p2p compute fabric, a high level of replication is needed.  Any `fsync` equivalent or semantic should not return until a certain (perhaps user-specified?) level of replication has been achieved.  To economize bandwidth and optimize throughput, multi peer transfers should be used.
+Given the unreliable nature of the p2p compute fabric, a high level of replication is needed.  Any `fsync` equivalent or semantic should not return until a certain (user-specified) level of replication has been achieved.  To economize bandwidth and optimize throughput, multi peer transfers should be used.
 
 ### Permissions
 > Users share content with arbitrary groups of users.  Different users hold different rights.  Some may:
