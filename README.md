@@ -18,7 +18,8 @@ Hypernet is a p2p OS that forges emergent reliability from an inherently unrelia
      * a system monitor
      * a method for remote code execution
      * an API that makes distributed programming easier
-___
+
+____
 #What's the point?
 Hypernet is a replacement for the internet. The internet today looks a lot like a set of dumb terminals (browsers) connected to mainframes (data centers). While a centralized hub-and-spoke architecture might seem like nothing more than an uninteresting implementation detail, it's actually a detail that carries serious side effects. Those side effects can be mitigated using a distributed architecture instead, which is exactly what Hypernet offers.
 
