@@ -84,11 +84,9 @@ Building apps, even for data centers is hard. Many engineers still tend to ignor
 
 Hypernet let's us get a fresh start and code for a network instead of a computer. In other words, stop coding for von Neumann machines and start coding for the internet.
 
-____
 #Business Model
 We charge developers who consume more compute resources than they bring to the network.  It's free for everyone else.  
 
-____
 #What's the status of Hypernet?
 
 Some parts of Hypernet are more moature than others.  We write a lot of cheap, disposable code as a way to expirement without committing to something crazy (like writing an entirely new functional programming language). In this way we quickly find out what works and what doesn't. If you want to use Hypernet you can [jump in right away](https://github.com/hypernet). We're open source and welcome your contributions.  We are also currently [raising money](https://angel.co/hypernet-1).
